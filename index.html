@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RoadSOS AI</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<h1>🚨 RoadSOS AI</h1>
+
+<button class="sos-btn" id="sosBtn">SOS EMERGENCY</button>
+
+<div class="card">
+<h2>Safety Status</h2>
+<p id="statusText">Location tracking active.</p>
+</div>
+
+<div class="card">
+<h2>Emergency Contacts</h2>
+<ul id="alertsList"></ul>
+</div>
+
+<div class="card">
+<h2>Accident Status</h2>
+<p>Monitoring active...</p>
+</div>
+
+<div class="card">
+<h2>AI Accident Analysis</h2>
+<input type="file" id="imageUpload"/>
+<div id="analysisResult">
+Upload accident image for analysis
+</div>
+</div>
+
+<div class="card">
+<h2>Nearby Emergency Responses</h2>
+<ul id="nearbyAlerts">
+<li>No nearby emergency services detected</li>
+</ul>
+</div>
+
+<!-- NEW ROAD HAZARD SYSTEM -->
+<div class="card">
+<h2>Road Hazard Detection</h2>
+<ul id="hazardList">
+<li>Scanning nearby road hazards...</li>
+</ul>
+</div>
+
+<!-- ========================== -->
+<!-- ✅ NEW FEATURES ADDED BELOW -->
+<!-- ========================== -->
+
+<!-- 🏥 NEAREST EMERGENCY FACILITIES -->
+<div class="card">
+<h2>🏥 Nearest Emergency Facilities</h2>
+<div id="facilitiesList">
+<p>Loading nearby facilities...</p>
+</div>
+</div>
+
+<!-- 🌍 COUNTRY & LANGUAGE SELECTOR -->
+<div class="card">
+<h2>🌍 Global Settings</h2>
+<select id="countrySelect">
+<option value="IN">🇮🇳 India</option>
+<option value="US">🇺🇸 United States</option>
+<option value="UK">🇬🇧 United Kingdom</option>
+<option value="CA">🇨🇦 Canada</option>
+<option value="AU">🇦🇺 Australia</option>
+<option value="DE">🇩🇪 Germany</option>
+<option value="FR">🇫🇷 France</option>
+<option value="JP">🇯🇵 Japan</option>
+<option value="BR">🇧🇷 Brazil</option>
+<option value="AE">🇦🇪 UAE</option>
+<option value="SG">🇸🇬 Singapore</option>
+<option value="OTHER">🌍 Other</option>
+</select>
+<select id="languageSelect">
+<option value="en">English</option>
+<option value="hi">हिंदी</option>
+<option value="es">Español</option>
+<option value="fr">Français</option>
+<option value="de">Deutsch</option>
+<option value="ja">日本語</option>
+<option value="zh">中文</option>
+<option value="ar">العربية</option>
+<option value="pt">Português</option>
+<option value="ta">தமிழ்</option>
+<option value="te">తెలుగు</option>
+<option value="bn">বাংলা</option>
+</select>
+<button id="updateSettingsBtn" class="sos-btn" style="background: #2196F3; margin-top: 10px;">Update Settings</button>
+</div>
+
+<!-- 🚑 AMBULANCE TRACKING -->
+<div class="card">
+<h2>🚑 Ambulance Tracking</h2>
+<div id="ambulanceStatus">
+<p>No ambulance dispatched</p>
+</div>
+<div id="ambulanceETA"></div>
+</div>
+
+<!-- 🗣️ VOICE GUIDANCE -->
+<div class="card">
+<h2>🗣️ Voice Guidance</h2>
+<button id="voiceToggle" class="sos-btn" style="background: #4CAF50;">Enable Voice</button>
+<p id="voiceStatus">Voice guidance: OFF</p>
+</div>
+
+<!-- 🚦 SMART TRAFFIC CONTROL -->
+<div class="card">
+<h2>🚦 Smart Traffic Control</h2>
+<div id="trafficStatus">
+<p>Traffic monitoring: Active</p>
+</div>
+<div id="trafficRoute"></div>
+</div>
+
+<!-- 👥 NEARBY USER ALERTS -->
+<div class="card">
+<h2>👥 Nearby User Alerts</h2>
+<ul id="nearbyUsersList">
+<li>Scanning for nearby RoadSOS users...</li>
+</ul>
+</div>
+
+<!-- 📡 OFFLINE STATUS -->
+<div class="card">
+<h2>📡 Network Status</h2>
+<p id="networkStatus">Checking connection...</p>
+<button id="syncOfflineBtn" class="sos-btn" style="background: #FF9800; display: none;">Sync Offline Data</button>
+</div>
+
+<!-- 🎙️ AUTO SOS DETECTION -->
+<div class="card">
+<h2>🎙️ Auto SOS Detection</h2>
+<p id="autoSosStatus">Auto-detection: Active</p>
+<p>Keywords: "help", "accident", "emergency", "save me"</p>
+</div>
+
+<div id="map"></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="./script.js"></script>
+</body>
+</html>
